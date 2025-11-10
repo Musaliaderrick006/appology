@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Apology for Babygirl</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    background: #fff5f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+  }
+  .container {
+    position: relative;
+    max-width:700px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.1);
+    z-index:10;
+    text-align:left;
+  }
+  h1 { color:#e11d48; margin-top:0; font-size:36px; text-align:center; }
+  p { line-height:1.7; margin:16px 0; font-size:18px; color:#334155; }
+  .signature { margin-top:30px; font-weight:600; font-size:20px; color:#e11d48; }
+  /* Hearts animation */
+  .heart {
+    position:absolute;
+    width:20px; height:20px;
+    background:#f43f5e;
+    transform: rotate(45deg);
+    animation: float 6s infinite;
+  }
+  .heart:after, .heart:before {
+    content:'';
+    position:absolute;
+    width:20px; height:20px;
+    background:#f43f5e;
+    border-radius:50%;
+  }
+  .heart:before { top:-10px; left:0; }
+  .heart:after { left:10px; top:0; }
+  @keyframes float {
+    0% { transform: translateY(0) rotate(45deg); opacity:1;}
+    50% { transform: translateY(-250px) rotate(45deg); opacity:0.7;}
+    100% { transform: translateY(-500px) rotate(45deg); opacity:0;}
+  }
+  /* Tulips background (subtle) */
+  body::before {
+    content:'';
+    position:absolute;
+    width:100%; height:100%;
+    background-image: url('https://images.unsplash.com/photo-1565895405135-8db9586e1b16?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity:0.15;
+    z-index:1;
+  }
+</style>
+</head>
+<body>
+<!-- Hearts -->
+<div class="heart" style="left:10%; animation-delay:0s;"></div>
+<div class="heart" style="left:30%; animation-delay:1s;"></div>
+<div class="heart" style="left:50%; animation-delay:2s;"></div>
+<div class="heart" style="left:70%; animation-delay:3s;"></div>
+<div class="heart" style="left:90%; animation-delay:4s;"></div>
+
+<div class="container">
+  <h1>Babygirl, I'm Sorry</h1>
+  <p>Dear Babygirl,</p>
+  <p>I know I made a mistake when I continued talking to that other girl. I see now how much that hurt you, and I hate that I caused you to doubt my love. My actions were thoughtless, and I regret them deeply.</p>
+  <p>You mean the world to me, and it breaks my heart to know that you’re afraid I might hurt you in the future. I want to promise you, from the deepest part of my heart, that my love for you is real and I will never betray your trust. You are my everything, and I am committed to being faithful, honest, and devoted to you every single day.</p>
+  <p>Babygirl, I hope you can forgive me and give me the chance to show you that you can love without fear. I want to make every moment we share filled with joy, trust, and happiness. You are my heart, my smile, and my forever.</p>
+  <p>Thank you for reading this. I hope it reminds you just how much I love and cherish you.</p>
+  <div class="signature">Love, Derrick</div>
+</div>
+
+<!-- Background music (replace 'YOUR_MP3_URL' with your mp3 file URL when hosting) -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
