@@ -1,91 +1,243 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Apology for Babygirl</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin:0; padding:0;
-    background: #fff5f7;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    overflow:hidden;
-  }
-  .container {
-    position: relative;
-    max-width:700px;
-    background:white;
-    border-radius:20px;
-    padding:40px;
-    box-shadow: 0 8px 30px rgba(2,6,23,0.1);
-    z-index:10;
-    text-align:left;
-  }
-  h1 { color:#e11d48; margin-top:0; font-size:36px; text-align:center; }
-  p { line-height:1.7; margin:16px 0; font-size:18px; color:#334155; }
-  .signature { margin-top:30px; font-weight:600; font-size:20px; color:#e11d48; }
-  /* Hearts animation */
-  .heart {
-    position:absolute;
-    width:20px; height:20px;
-    background:#f43f5e;
-    transform: rotate(45deg);
-    animation: float 6s infinite;
-  }
-  .heart:after, .heart:before {
-    content:'';
-    position:absolute;
-    width:20px; height:20px;
-    background:#f43f5e;
-    border-radius:50%;
-  }
-  .heart:before { top:-10px; left:0; }
-  .heart:after { left:10px; top:0; }
-  @keyframes float {
-    0% { transform: translateY(0) rotate(45deg); opacity:1;}
-    50% { transform: translateY(-250px) rotate(45deg); opacity:0.7;}
-    100% { transform: translateY(-500px) rotate(45deg); opacity:0;}
-  }
-  /* Tulips background (subtle) */
-  body::before {
-    content:'';
-    position:absolute;
-    width:100%; height:100%;
-    background-image: url('https://images.unsplash.com/photo-1565895405135-8db9586e1b16?auto=format&fit=crop&w=1470&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity:0.15;
-    z-index:1;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Apology for My Babygirl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff69b4; /* Hot Pink/Deep Rose */
+            --text-color: #333;
+            --container-bg: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Base Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fce4ec; /* Soft base color */
+            overflow: hidden; /* Prevent body scroll */
+            color: var(--text-color);
+        }
+
+        /* Tulips Background with Opacity */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1518972559570-74ac59740263?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Pink Tulips */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Subtly romantic */
+            z-index: -2;
+        }
+
+        /* Romantic Gradient Overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 220, 240, 0.5), rgba(255, 255, 255, 0.3));
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Main Message Container */
+        .apology-container {
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh; /* Maximum height for mobile view */
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            overflow-y: auto; /* Scrollable content for the message */
+            position: relative;
+            z-index: 10;
+            animation: gentleFloat 10s ease-in-out infinite alternate; /* Gentle whole container animation */
+        }
+
+        /* Custom Scrollbar for Aesthetics */
+        .apology-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .apology-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+        .apology-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Header Styling */
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Paragraph Styling and Fade-in Animation */
+        .apology-container p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s ease-out forwards;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        /* Animation Delays for Sequential Text Appearance */
+        .apology-container p:nth-child(2) { animation-delay: 0.5s; }
+        .apology-container p:nth-child(3) { animation-delay: 1.5s; }
+        .apology-container p:nth-child(4) { animation-delay: 2.5s; }
+        .apology-container p:nth-child(5) { animation-delay: 3.5s; }
+        .apology-container p:nth-child(6) { animation-delay: 4.5s; }
+        .apology-container p:nth-child(7) { animation-delay: 5.5s; }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes gentleFloat {
+            0% { transform: translateY(0) rotate(0.5deg); }
+            100% { transform: translateY(-10px) rotate(-0.5deg); }
+        }
+
+        /* Floating Hearts CSS */
+        .heart {
+            position: absolute;
+            color: var(--primary-color);
+            font-size: 1.5em;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatAndSway linear infinite;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Soft glow */
+        }
+
+        @keyframes floatAndSway {
+            0% { transform: translate(0, 0) rotate(0); opacity: 0; }
+            20% { opacity: 0.8; }
+            50% { transform: translate(var(--sway-x), -50vh) rotate(var(--sway-r)); }
+            100% { transform: translate(var(--sway-x-end), -100vh) rotate(var(--sway-r-end)); opacity: 0; }
+        }
+
+        /* Audio Controls Styling */
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        audio:hover {
+            opacity: 1;
+        }
+        
+        /* Signature */
+        .signature {
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 25px;
+            display: block;
+            text-align: right;
+            color: #777;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .apology-container {
+                padding: 20px 15px;
+                width: 95%; /* Better use of mobile screen */
+                max-height: 90vh;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Hearts -->
-<div class="heart" style="left:10%; animation-delay:0s;"></div>
-<div class="heart" style="left:30%; animation-delay:1s;"></div>
-<div class="heart" style="left:50%; animation-delay:2s;"></div>
-<div class="heart" style="left:70%; animation-delay:3s;"></div>
-<div class="heart" style="left:90%; animation-delay:4s;"></div>
 
-<div class="container">
-  <h1>Babygirl, I'm Sorry</h1>
-  <p>Dear Babygirl,</p>
-  <p>I know I made a mistake when I continued talking to that other girl. I see now how much that hurt you, and I hate that I caused you to doubt my love. My actions were thoughtless, and I regret them deeply.</p>
-  <p>You mean the world to me, and it breaks my heart to know that you’re afraid I might hurt you in the future. I want to promise you, from the deepest part of my heart, that my love for you is real and I will never betray your trust. You are my everything, and I am committed to being faithful, honest, and devoted to you every single day.</p>
-  <p>Babygirl, I hope you can forgive me and give me the chance to show you that you can love without fear. I want to make every moment we share filled with joy, trust, and happiness. You are my heart, my smile, and my forever.</p>
-  <p>Thank you for reading this. I hope it reminds you just how much I love and cherish you.</p>
-  <div class="signature">Love, Derrick</div>
-</div>
+    <div class="apology-container">
+        <h1>My Heart Belongs to You, Babygirl ❤️</h1>
+        
+        <p>Dear Babygirl,</p>
 
-<!-- Background music (replace 'YOUR_MP3_URL' with your mp3 file URL when hosting) -->
-<audio autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
+        <p>I know you were **hurt and confused** when you received messages from what you thought was another girl. I understand why that made you **scared to fully trust me** and to love freely.</p>
+
+        <p>Babygirl, I want you to know the truth: **it was never about anyone else**. That was you all along, and I have **never cheated**. My heart belongs only to you, and I will **never betray your trust**. You are the one I love, deeply and completely.</p>
+
+        <p>Please don’t let fear take away the love we have. I want to reassure you, from the bottom of my heart, that I am **faithful, devoted, and committed** to you. I will do everything to make you feel **safe, cherished, and adored**.</p>
+
+        <p>Babygirl, I hope you can **forgive the confusion** and give us the chance to grow closer and build our love without fear. You mean the world to me, and I want every day with you to be full of **happiness, trust, and laughter**.</p>
+
+        <p>Thank you for reading this. I love you more than words can express, and I will spend every day showing you that love.</p>
+        
+        <span class="signature">Love, Derrick</span>
+
+        <audio controls autoplay loop>
+            <source src="your_romantic_guitar_music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // JavaScript for Dynamic Floating Hearts
+        const container = document.body;
+        const numberOfHearts = 35; // Increased for a more dynamic effect
+        const heartSymbol = '💖'; 
+
+        for (let i = 0; i < numberOfHearts; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = heartSymbol;
+            
+            // Random positioning and size
+            const startX = Math.random() * 100;
+            const size = Math.random() * 0.8 + 0.5; // Size between 0.5 and 1.3em
+            const duration = Math.random() * 10 + 15; // Duration between 15s and 25s
+            const delay = Math.random() * 10; // Animation delay up to 10s
+
+            // Sway variables for natural movement
+            const swayX = Math.random() * 30 - 15; // -15 to +15
+            const swayR = Math.random() * 30 - 15; // -15 to +15 degrees
+            const swayXEnd = Math.random() * 30 - 15;
+            const swayREnd = Math.random() * 30 - 15;
+
+            heart.style.left = `${startX}vw`;
+            heart.style.fontSize = `${size}em`;
+            heart.style.animationDuration = `${duration}s`;
+            heart.style.animationDelay = `${delay}s`;
+
+            // Set CSS variables for the sway keyframes
+            heart.style.setProperty('--sway-x', `${swayX}px`);
+            heart.style.setProperty('--sway-r', `${swayR}deg`);
+            heart.style.setProperty('--sway-x-end', `${swayXEnd}px`);
+            heart.style.setProperty('--sway-r-end', `${swayREnd}deg`);
+            
+            container.appendChild(heart);
+        }
+    </script>
 </body>
 </html>
 
