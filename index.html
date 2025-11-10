@@ -58,16 +58,16 @@
         .apology-container {
             width: 90%;
             max-width: 500px;
-            max-height: 80vh; /* Maximum height for mobile view */
+            max-height: 80vh; 
             background: var(--container-bg);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             text-align: center;
-            overflow-y: auto; /* Scrollable content for the message */
+            overflow-y: auto; 
             position: relative;
             z-index: 10;
-            animation: gentleFloat 10s ease-in-out infinite alternate; /* Gentle whole container animation */
+            animation: gentleFloat 10s ease-in-out infinite alternate; 
         }
 
         /* Custom Scrollbar for Aesthetics */
@@ -104,13 +104,13 @@
             padding: 0 10px;
         }
 
-        /* Animation Delays for Sequential Text Appearance */
+        /* *** NEW Animation Delays (Approx. 10s pauses) *** */
         .apology-container p:nth-child(2) { animation-delay: 0.5s; }
-        .apology-container p:nth-child(3) { animation-delay: 1.5s; }
-        .apology-container p:nth-child(4) { animation-delay: 2.5s; }
-        .apology-container p:nth-child(5) { animation-delay: 3.5s; }
-        .apology-container p:nth-child(6) { animation-delay: 4.5s; }
-        .apology-container p:nth-child(7) { animation-delay: 5.5s; }
+        .apology-container p:nth-child(3) { animation-delay: 10s; } /* 1st main point */
+        .apology-container p:nth-child(4) { animation-delay: 20s; } /* 2nd main point */
+        .apology-container p:nth-child(5) { animation-delay: 30s; } /* 3rd main point */
+        .apology-container p:nth-child(6) { animation-delay: 40s; } /* 4th main point */
+        .apology-container p:nth-child(7) { animation-delay: 50s; } /* Closing */
 
         /* Keyframes */
         @keyframes fadeIn {
@@ -124,7 +124,7 @@
             100% { transform: translateY(-10px) rotate(-0.5deg); }
         }
 
-        /* Floating Hearts CSS */
+        /* Floating Hearts CSS (remains the same) */
         .heart {
             position: absolute;
             color: var(--primary-color);
@@ -132,7 +132,7 @@
             pointer-events: none;
             opacity: 0;
             animation: floatAndSway linear infinite;
-            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Soft glow */
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5); 
         }
 
         @keyframes floatAndSway {
@@ -167,7 +167,7 @@
         @media (max-width: 600px) {
             .apology-container {
                 padding: 20px 15px;
-                width: 95%; /* Better use of mobile screen */
+                width: 95%; 
                 max-height: 90vh;
             }
             h1 {
@@ -183,15 +183,17 @@
         
         <p>Dear Babygirl,</p>
 
-        <p>I know you were **hurt and confused** when you received messages from what you thought was another girl. I understand why that made you **scared to fully trust me** and to love freely.</p>
+        <p>I need to be completely honest about what happened with the texts. You texted me as **"Lexie"** because you were testing me, and when I kept talking, I **failed you**. Seeing my response through that lens hurt you deeply, and I fully understand why you now feel scared to love me and trust me completely.</p>
 
-        <p>Babygirl, I want you to know the truth: **it was never about anyone else**. That was you all along, and I have **never cheated**. My heart belongs only to you, and I will **never betray your trust**. You are the one I love, deeply and completely.</p>
+        <p>Babygirl, my actions in that moment were careless and wrong. It was a stupid, momentary lapse in judgment, and I am so sorry for not immediately recognizing and shutting down the attempt. I should have instantly said: **"My heart belongs to Babygirl, and I'm not interested."**</p>
 
-        <p>Please don’t let fear take away the love we have. I want to reassure you, from the bottom of my heart, that I am **faithful, devoted, and committed** to you. I will do everything to make you feel **safe, cherished, and adored**.</p>
+        <p>Please know that my curiosity, or whatever made me continue that conversation, **was not genuine interest in anyone else**. I have **never cheated** on you, and I never will. You are the only woman I want, and my heart has always belonged solely to you.</p>
 
-        <p>Babygirl, I hope you can **forgive the confusion** and give us the chance to grow closer and build our love without fear. You mean the world to me, and I want every day with you to be full of **happiness, trust, and laughter**.</p>
+        <p>I promise you, with every fiber of my being, that I am **faithful, devoted, and committed** to building a secure future with you. I want to spend every day making you feel safe, cherished, and absolutely adored.</p>
 
-        <p>Thank you for reading this. I love you more than words can express, and I will spend every day showing you that love.</p>
+        <p>Babygirl, please forgive my poor choice in handling that test. I hope you can see that my love for you is bigger than that moment of stupidity. Give us a chance to grow closer and move past this fear.</p>
+
+        <p>I love you more than words can express, and I will prove my commitment every single day.</p>
         
         <span class="signature">Love, Derrick</span>
 
@@ -202,9 +204,9 @@
     </div>
 
     <script>
-        // JavaScript for Dynamic Floating Hearts
+        // JavaScript for Dynamic Floating Hearts (remains the same)
         const container = document.body;
-        const numberOfHearts = 35; // Increased for a more dynamic effect
+        const numberOfHearts = 35; 
         const heartSymbol = '💖'; 
 
         for (let i = 0; i < numberOfHearts; i++) {
@@ -212,15 +214,13 @@
             heart.classList.add('heart');
             heart.innerHTML = heartSymbol;
             
-            // Random positioning and size
             const startX = Math.random() * 100;
-            const size = Math.random() * 0.8 + 0.5; // Size between 0.5 and 1.3em
-            const duration = Math.random() * 10 + 15; // Duration between 15s and 25s
-            const delay = Math.random() * 10; // Animation delay up to 10s
+            const size = Math.random() * 0.8 + 0.5; 
+            const duration = Math.random() * 10 + 15; 
+            const delay = Math.random() * 10; 
 
-            // Sway variables for natural movement
-            const swayX = Math.random() * 30 - 15; // -15 to +15
-            const swayR = Math.random() * 30 - 15; // -15 to +15 degrees
+            const swayX = Math.random() * 30 - 15; 
+            const swayR = Math.random() * 30 - 15; 
             const swayXEnd = Math.random() * 30 - 15;
             const swayREnd = Math.random() * 30 - 15;
 
@@ -229,7 +229,6 @@
             heart.style.animationDuration = `${duration}s`;
             heart.style.animationDelay = `${delay}s`;
 
-            // Set CSS variables for the sway keyframes
             heart.style.setProperty('--sway-x', `${swayX}px`);
             heart.style.setProperty('--sway-r', `${swayR}deg`);
             heart.style.setProperty('--sway-x-end', `${swayXEnd}px`);
